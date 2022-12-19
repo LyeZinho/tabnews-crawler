@@ -78,15 +78,11 @@ async function makeContent(){
 	return contentList;
 }
 
-let fs = require('fs');
 
-makeContent().then((contentList) => {
-	fs.writeFile('contentList.json', JSON.stringify(contentList), (err) => {
-		if(err) throw err;
-		console.log('File saved!');
-	});
-});
-
-
+module.exports = {
+  getContents,
+  getContent,
+  makeContent
+}
 
 
